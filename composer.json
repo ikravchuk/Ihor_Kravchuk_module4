@@ -1,0 +1,16 @@
+{
+    "name": "ihor/ihor_kravchuk_module4",
+    "description": "Module 4 for PHP-academy",
+    "authors": [
+        {
+            "name": "Ihor Kravchuk",
+            "email": "ihor.kravchuk.mail@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4":{
+            "Module4\\": "app"
+        }
+    },
+    "require": {}
+}
