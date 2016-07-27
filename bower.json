@@ -1,0 +1,17 @@
+{
+  "name": "Ihor_Kravchuk_module4",
+  "homepage": "https://github.com/ikravchuk/Ihor_Kravchuk_module4",
+  "authors": [
+    "Ihor Kravchuk <ihor.kravchuk.mail@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

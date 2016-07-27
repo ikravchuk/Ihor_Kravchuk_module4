@@ -24,6 +24,7 @@ class Router
         if (!empty($_SERVER['REQUEST_URI'])) {
             return trim($_SERVER['REQUEST_URI'], '/');
         }
+        return null;
     }
         
     public function run()
@@ -31,21 +32,40 @@ class Router
 
         // Get requested route
         $uri = $this->getURI();
+
         // Check requested route in routes.php
+        // if route exists get names of controller and action
         foreach ($this->routes as $route => $action) {
             // Compare $route with $uri
             if (preg_match("~$route~", $uri)) {
-                // find right Controller and Action
-                $segments = explode('/', $action);
-                $controllerName = ucfirst(array_shift($segments).'Controller');
+
+                //get internal route from outer
+                $internalRoute = preg_replace("~$route~", $action, $uri);
+                
+                // find right Controller, Action, Parameters
+                $segments = explode('/', $internalRoute);
+
+                //TEMP? path modifier
+                $hostCut = array_shift($segments);
+
+                $controllerName = 'Module4\controllers\\'.ucfirst(array_shift($segments).'Controller');
+
                 $actionName = 'action'.ucfirst(array_shift($segments));
-                echo $controllerName ."-". $actionName;
+
+                $parameters = $segments;
+
+
+                // Create object and call action method
+                $controller = new $controllerName;
+
+                $response = call_user_func_array(array($controller, $actionName), $parameters);
+
+                break;
+
             }
 
         }
 
-        // if route exists get controller and action for
 
-        // Create object and call action method
     }
 }
