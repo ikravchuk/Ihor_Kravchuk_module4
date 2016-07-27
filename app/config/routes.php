@@ -1,5 +1,5 @@
 <?php
 return array(
-    "news" => "news/index", // actionIndex in NewsController
+    "news" => "news/list", // NewsController/actionList
     "analytics" => "analytics/list" // 
 );
