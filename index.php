@@ -12,5 +12,6 @@ use \Module4\components\Router;
 
 // 3. Router
 
+/** @var Router $router */
 $router = new Router();
 $router->run();
