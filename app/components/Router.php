@@ -33,7 +33,7 @@ class Router
         $uri = $this->getURI();
         // Check requested route in routes.php
         foreach ($this->routes as $route => $action) {
-            // Compare $uriPattern with $uri
+            // Compare $route with $uri
             if (preg_match("~$route~", $uri)) {
                 // find right Controller and Action
                 $segments = explode('/', $action);
