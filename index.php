@@ -3,15 +3,11 @@
 require "vendor/autoload.php";
 
 use \Module4\components\Router;
-use 
+use \Module4\components\Db;
+
+session_start();
 
 
-
-// 1. General settings
-
-// 2. Connection to Database
-
-// 3. Router
 
 /** @var Router $router */
 $router = new Router();

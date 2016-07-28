@@ -4,7 +4,7 @@
 namespace Module4\controllers;
 
 
-class SliderController
+class AdminController
 {
 
 }

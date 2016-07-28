@@ -59,8 +59,10 @@ class Router
                 $controller = new $controllerName;
 
                 $response = call_user_func_array(array($controller, $actionName), $parameters);
+                if ($response != null){
+                    break;
+                }
 
-                break;
 
             }
 
